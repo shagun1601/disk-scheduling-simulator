@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Advanced Disk Scheduling Simulator</title>
+  <link rel="stylesheet" href="ds.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Advanced Disk Scheduling Simulator</h1>
+
+    <div class="input-group">
+      <div class="input-field">
+        <label for="maxCylinder">Maximum Cylinder:</label>
+        <input type="number" id="maxCylinder" min="1" max="4999" value="999" />
+        <label for="initialHead">Initial Head Position:</label>
+        <input type="number" id="initialHead" min="0" value="0" />
+        <label for="requestCount">Number of Requests:</label>
+        <input type="number" id="requestCount" min="1" max="1000" value="8" />
+
+        <div class="control-buttons">
+          <button id="generateRequests">Generate Random Requests</button>
+          <button id="addRequest">Add Manual Request</button>
+          <button id="clearRequests" class="secondary">Clear Requests</button>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <label for="algorithm">Choose Algorithm (quick run):</label>
+        <select id="algorithm">
+          <option value="fcfs">FCFS</option>
+          <option value="sstf">SSTF</option>
+          <option value="scan">SCAN</option>
+          <option value="cscan">C-SCAN</option>
+          <option value="look">LOOK</option>
+          <option value="clook">C-LOOK</option>
+        </select>
+
+        <div class="run-buttons">
+          <button id="runSelected">Run Selected</button>
+          <button id="runAll" class="secondary">Run All</button>
+        </div>
+
+        <div class="request-list" id="requestsList" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <button id="visualize" class="primary">Start Simulation (Visualizer)</button>
+
+    <div class="visualization-container">
+      <div class="visualization-box">
+        <h3>Performance Analysis Graph</h3>
+        <div id="disk-area" class="disk-area">
+          <canvas id="visualizationCanvas" width="1100" height="320"></canvas>
+        </div>
+        <div class="result-summary" id="visualSummary">Run an algorithm to see the visualization.</div>
+      </div>
+
+      <div class="visualization-box">
+        <h3>Real-time Disk Movement</h3>
+        <div id="disk-simulator" class="disk-simulator">
+          <div class="disk-track">
+            <div class="disk-head" style="left:0%"></div>
+            <div class="track-numbers">
+              <span>0</span>
+              <span class="mid-1">250</span>
+              <span class="mid-2">500</span>
+              <span class="mid-3">750</span>
+              <span id="max-number">999</span>
+            </div>
+            <div class="track-line"></div>
+            <div class="request-points"></div>
+          </div>
+
+          <div class="simulator-stats">
+            <div class="stat-item">
+              <span class="stat-label">Head Position</span>
+              <span id="current-position" class="stat-value">0</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Pending Request</span>
+              <span id="next-request" class="stat-value">-</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Head Movement</span>
+              <span id="head-direction" class="stat-value">-</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <div class="tab">
+        <button class="tablinks active" data-tab="results">Results</button>
+        <button class="tablinks" data-tab="comparison">Comparison</button>
+      </div>
+
+      <div id="results" class="tabcontent" style="display:block;">
+        <h3>Algorithm Results</h3>
+        <table id="resultsTable">
+          <thead>
+            <tr><th>Step</th><th>From</th><th>To</th><th>Movement</th><th>Total</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <div class="result-summary" id="resultSummary"></div>
+      </div>
+
+      <div id="comparison" class="tabcontent" style="display:none;">
+        <h3>Algorithm Comparison</h3>
+        <table id="comparisonTable">
+          <thead>
+            <tr><th>Algorithm</th><th>Total Movement</th><th>Average</th><th>Improvement vs FCFS</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="info">
+      <p><strong>Request Sequence:</strong> <span id="seek-sequence"></span></p>
+      <p id="metrics-info"></p>
+    </div>
+  </div>
+
+  <script src="ds.js"></script>
+</body>
+</html>
+
