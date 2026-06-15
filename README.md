@@ -1,136 +1,155 @@
-# 💽 Disk Scheduling Simulator
+# 💽 Advanced Disk Scheduling Simulator
 
-A web-based Disk Scheduling Simulator that helps users visualize and compare different disk scheduling algorithms used in Operating Systems. This project demonstrates how disk requests are serviced and calculates the total head movement for various scheduling techniques.
+An interactive web-based simulator that visualizes and compares popular Disk Scheduling Algorithms used in Operating Systems. This project helps students understand how different algorithms process disk requests and optimize disk head movement.
+
+## 🌐 Live Demo
+
+🔗 https://shagun1601.github.io/disk-scheduling-simulator/
+
+## 📂 GitHub Repository
+
+🔗 https://github.com/shagun1601/disk-scheduling-simulator
+
+---
 
 ## 🚀 Features
 
-- Interactive user interface
-- Visual representation of disk head movement
-- Compare multiple disk scheduling algorithms
-- Calculates total seek time / head movement
-- User-defined disk requests and initial head position
-- Educational tool for Operating Systems students
+- Interactive and user-friendly interface
+- Supports multiple disk scheduling algorithms
+- Visualizes disk head movement
+- Compares algorithm performance
+- Displays seek sequence and total head movement
+- Real-time simulation results
+- Educational tool for Operating Systems learning
+- Responsive design for different screen sizes
+
+---
 
 ## 📚 Algorithms Implemented
 
-### 1. FCFS (First Come First Serve)
-Processes disk requests in the order they arrive.
+### FCFS (First Come First Serve)
+Processes requests in the order they arrive.
 
-### 2. SSTF (Shortest Seek Time First)
-Services the request closest to the current head position.
+### SSTF (Shortest Seek Time First)
+Selects the request closest to the current head position.
 
-### 3. SCAN (Elevator Algorithm)
-Moves the disk head in one direction servicing requests and then reverses direction.
+### SCAN (Elevator Algorithm)
+Moves the disk head in one direction, servicing requests before reversing.
 
-### 4. C-SCAN (Circular SCAN)
-Services requests in one direction only and jumps back to the beginning.
+### C-SCAN (Circular SCAN)
+Services requests in one direction only and returns to the beginning.
 
-### 5. LOOK
-Similar to SCAN but only travels as far as the last request.
+### LOOK
+Similar to SCAN but only travels as far as the last pending request.
 
-### 6. C-LOOK
-Similar to C-SCAN but only travels between the first and last pending requests.
+### C-LOOK
+Similar to C-SCAN but only moves between pending requests.
 
-## 🛠️ Tech Stack
+---
+
+## 🛠️ Technologies Used
 
 - HTML5
 - CSS3
 - JavaScript
+- GitHub Pages (Deployment)
 
-## 📂 Project Structure
-
-```
-disk-scheduling-simulator/
-│
-├── index.html
-├── style.css
-├── script.js
-├── assets/
-│   └── screenshots/
-└── README.md
-```
-
-## ⚙️ How to Run
-
-1. Clone the repository
-
-```bash
-git clone https://github.com/shagun1601/disk-scheduling-simulator.git
-```
-
-2. Open the project folder
-
-```bash
-cd disk-scheduling-simulator
-```
-
-3. Run the application
-
-Simply open:
-
-```bash
-index.html
-```
-
-in your browser.
-
-## 📈 Input Parameters
-
-- Initial Head Position
-- Disk Request Queue
-- Disk Size (if applicable)
-- Direction of Head Movement (for SCAN/C-SCAN)
-
-## 📊 Output
-
-The simulator displays:
-
-- Sequence of serviced requests
-- Total head movement
-- Seek distance
-- Visual disk head traversal graph
+---
 
 ## 🎯 Learning Objectives
 
-This project helps students understand:
+This simulator helps users understand:
 
-- Disk scheduling concepts
-- Seek time optimization
-- Performance comparison of scheduling algorithms
-- Operating System resource management
+- Disk Scheduling Concepts
+- Seek Time Optimization
+- Operating System Resource Management
+- Performance Comparison of Scheduling Algorithms
+- Visualization of Disk Head Movements
+
+---
+
+## ⚙️ How to Use
+
+1. Enter the disk request queue.
+2. Enter the initial head position.
+3. Select the desired disk scheduling algorithm.
+4. Run the simulation.
+5. Analyze:
+   - Seek Sequence
+   - Total Head Movement
+   - Performance Comparison
+   - Disk Head Traversal Visualization
+
+---
+
+## 📊 Sample Input
+
+```text
+Disk Requests: 98, 183, 37, 122, 14, 124, 65, 67
+Initial Head Position: 53
+```
+
+---
+
+## 📈 Output
+
+The simulator provides:
+
+- Request servicing order
+- Total seek distance
+- Disk head movement visualization
+- Comparative algorithm performance
+
+---
 
 ## 📸 Screenshots
 
-Add screenshots of your simulator here.
+### Simulator Interface
+<img width="100%" alt="Disk Scheduling Simulator" src="https://github.com/shagun1601/disk-scheduling-simulator/assets/placeholder">
 
-### Home Page
-![Home Page](assets/screenshots/home.png)
+> Replace this placeholder with actual screenshots from your project.
 
-### Simulation Result
-![Result](assets/screenshots/result.png)
+---
+
+## 🔮 Future Enhancements
+
+- Additional disk scheduling algorithms
+- Animated visualizations
+- Performance graphs and charts
+- Export simulation reports
+- Dark mode support
+- Mobile optimization improvements
+
+---
 
 ## 🤝 Contributing
 
-Contributions are welcome!
+Contributions, suggestions, and improvements are welcome.
 
 1. Fork the repository
-2. Create a new branch
-3. Make your changes
-4. Submit a Pull Request
+2. Create a feature branch
+3. Commit your changes
+4. Open a Pull Request
+
+---
 
 ## 👨‍💻 Author
 
 **Shagun Gupta**
 
-B.Tech Computer Science Engineering  
+Computer Science Engineering Student  
 Lovely Professional University
 
 GitHub: https://github.com/shagun1601
 
-## 📄 License
+---
 
-This project is licensed under the MIT License.
+## ⭐ Support
+
+If you found this project useful, please consider giving it a star on GitHub.
 
 ---
 
-⭐ If you found this project useful, consider giving it a star on GitHub!
+## 📄 License
+
+This project is open-source and available under the MIT License.
