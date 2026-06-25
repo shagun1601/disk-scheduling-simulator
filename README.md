@@ -102,15 +102,6 @@ The simulator provides:
 
 ---
 
-## 📸 Screenshots
-
-### Simulator Interface
-<img width="100%" alt="Disk Scheduling Simulator" src="https://github.com/shagun1601/disk-scheduling-simulator/assets/placeholder">
-
-> Replace this placeholder with actual screenshots from your project.
-
----
-
 ## 🔮 Future Enhancements
 
 - Additional disk scheduling algorithms
